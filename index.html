@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Railway Booking — Pune · Nashik · Mumbai · Nagpur · Goa</title>
+  <!-- External CSS Link -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36'><rect width='36' height='36' rx='8' fill='%2306b6d4'/><path d='M10 22h16V18L24 16H12l-2 2z' fill='%2308140f' opacity='0.9'/></svg>" alt="logo" />
+      <div>
+        <h1>Railway Booking — Pune · Nashik · Mumbai · Nagpur · Goa</h1>
+        <div class="muted">Simple HTML/CSS/JS demo — From/To, AC/Non-AC, distance pricing, platform no.</div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="card">
+        <h3 style="margin:0 0 8px 0">Station Longline & Platforms</h3>
+        <div id="stations" class="stations-list"></div>
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.03);margin:12px 0">
+        <div class="muted">Click any station in the list to pre-fill 'From' or 'To' in the booking form.</div>
+      </aside>
+
+      <main class="card">
+        <h3 style="margin:0 0 12px 0">Book a Ticket</h3>
+        <form id="bookingForm">
+          <div class="row">
+            <div class="col">
+              <label for="from">From</label>
+              <select id="from" required></select>
+            </div>
+            <div class="col">
+              <label for="to">To</label>
+              <select id="to" required></select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="date">Journey Date</label>
+              <input id="date" type="date" required />
+            </div>
+            <div class="col">
+              <label for="time">Time</label>
+              <input id="time" type="time" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="class">Class</label>
+              <select id="class">
+                <option value="nonac">Non-AC</option>
+                <option value="ac">AC</option>
+              </select>
+            </div>
+            <div class="col">
+              <label for="qty">Passengers</label>
+              <input id="qty" type="number" min="1" value="1" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="promo">Promo Code (optional)</label>
+              <input id="promo" placeholder="e.g. SAVE10" />
+            </div>
+            <div class="col" style="display:flex;align-items:flex-end;">
+              <button id="estimateBtn" type="button" class="btn">Estimate Price</button>
+            </div>
+          </div>
+
+          <h4 style="margin:6px 0 4px 0">Ticket Summary</h4>
+          <div id="summary" class="summary">Fill form and click "Estimate Price"</div>
+
+          <div style="display:flex;gap:8px;margin-top:12px;">
+            <button id="bookBtn" class="btn" type="button">Generate Ticket</button>
+            <button id="saveBtn" type="button" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">Save to Local</button>
+            <button id="resetBtn" type="reset" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">Reset</button>
+          </div>
+        </form>
+
+        <footer>
+          <div class="muted">Note: Pricing here is for demo — distance values are approximate and used only for example calculations.</div>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <!-- External JS Link -->
+  <script src="script.js"></script>
+</body>
+</html>
